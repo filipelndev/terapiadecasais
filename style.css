@@ -173,17 +173,59 @@ nav a:hover {
   transform: translateY(0);
 }
 
+/* ===== Ajustes para Mobile (versão final corrigida) ===== */
 @media (max-width: 768px) {
-  .hero-content {
+  /* Corrige estrutura geral */
+  .hero {
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: auto;
+    background-position: center top;
+    overflow: visible; /* permite a imagem sair levemente do contêiner */
   }
+
+  .hero-content {
+    flex-direction: column; /* garante que imagem vá abaixo do texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .hero-text {
+    max-width: 90%;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 0.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero .btn-dourado {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.8rem;
+  }
+
   .hero-img {
-    width: 180px;
-    bottom: 0;
-    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    position: static; /* remove o deslocamento lateral */
+    right: auto;
+    margin-bottom: -28.5px;
   }
 }
-
 
 /* Sessão Início */
 .inicio {
@@ -193,6 +235,11 @@ nav a:hover {
   padding: 120px 8% 80px;
   flex-wrap: wrap;
   background: #f5f5f5 ;
+}
+
+.espaco {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .inicio-content {
@@ -218,6 +265,20 @@ nav a:hover {
   max-width: 500px;
   border-radius: 12px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 768px) {
+  .inicio {
+    padding: 2rem 1rem;
+  }
+
+  .inicio .hero button {
+    margin-bottom: 2rem; /* espaço extra entre botão e imagem */
+  }
+
+  .inicio img {
+    margin-top: 1rem;
+  }
 }
 
 /* Cards e seções */
