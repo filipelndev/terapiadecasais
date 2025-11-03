@@ -32,15 +32,17 @@
   </div>
 </header>
 
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-text" data-animate>
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content" data-animate>
+    <div class="hero-text">
       <h2>Reconectando laços. Transformando relações.</h2>
       <p>Terapia de casal com abordagem psicanalítica, promovendo diálogo, compreensão e crescimento mútuo.</p>
       <a href="#contato" class="btn-dourado">Agende sua primeira sessão</a>
     </div>
-  </section>
+    <img src="hero1.png" alt="Imagem destaque" class="hero-img">
+  </div>
+</section>
 
   <!-- Início -->
   <section id="inicio" class="inicio">
@@ -50,7 +52,7 @@
       <a href="#contato" class="btn-dourado">Agendar sessão</a>
     </div>
     <div class="inicio-image">
-      <img src="https://images.unsplash.com/photo-1604079628040-94301bb21b91?auto=format&fit=crop&w=900&q=80" alt="Casal em terapia">
+      <img src="inicio.png" alt="Casal em terapia">
     </div>
   </section>
 
@@ -60,12 +62,12 @@
       <h2>Sobre Sabrina & Wesley</h2>
       <div class="sobre-cards">
         <div class="card" data-animate>
-          <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=500&q=80" alt="Sabrina">
+          <img class="img-sobre" src="Sabrina.jpeg" alt="Sabrina">
           <h3>Sabrina</h3>
           <p>Psicanalista com anos de experiência em terapia de casais, focada no acolhimento e desenvolvimento emocional.</p>
         </div>
         <div class="card" data-animate>
-          <img src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?auto=format&fit=crop&w=500&q=80" alt="Wesley">
+          <img class="img-sobre" src="Wesley.jpeg" alt="Wesley">
           <h3>Wesley</h3>
           <p>Psicanalista especialista em relações afetivas, promovendo compreensão e reconexão nos relacionamentos.</p>
         </div>
@@ -162,42 +164,46 @@
   </footer>
 
   <!-- JS -->
-  <script>
-    // Menu mobile
-    const toggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('header nav');
-    toggle.addEventListener('click', () => nav.classList.toggle('active'));
+<script>
+  // Menu mobile
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('header nav');
+  toggle.addEventListener('click', () => nav.classList.toggle('active'));
 
-    // Rolagem suave
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
-        nav.classList.remove('active');
-      });
+  // Rolagem suave
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+      nav.classList.remove('active');
     });
+  });
 
-    // Animações
-    const elements = document.querySelectorAll('[data-animate]');
-    window.addEventListener('scroll', () => {
-      const trigger = window.innerHeight * 0.85;
-      elements.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        if (top < trigger) el.classList.add('visible');
-      });
+  // Animações ao rolar e ao carregar
+  const elements = document.querySelectorAll('[data-animate]');
+  function animateOnScroll() {
+    const trigger = window.innerHeight * 0.85;
+    elements.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if (top < trigger) el.classList.add('visible');
     });
+  }
 
-    // Carrossel de depoimentos
-    const quotes = document.querySelectorAll('.depoimentos-slider blockquote');
-    let index = 0;
+  window.addEventListener('load', animateOnScroll);
+  window.addEventListener('scroll', animateOnScroll);
+
+  // Carrossel de depoimentos
+  const quotes = document.querySelectorAll('.depoimentos-slider blockquote');
+  let index = 0;
+  quotes[index].classList.add('active');
+  setInterval(() => {
+    quotes[index].classList.remove('active');
+    index = (index + 1) % quotes.length;
     quotes[index].classList.add('active');
-    setInterval(() => {
-      quotes[index].classList.remove('active');
-      index = (index + 1) % quotes.length;
-      quotes[index].classList.add('active');
-    }, 5000);
-  </script>
+  }, 5000);
+</script>
+
 
 </body>
 </html>
