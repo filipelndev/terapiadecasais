@@ -99,6 +99,53 @@ nav a:hover {
   color: #b38b4e;
 }
 
+/* ======== Navbar Responsiva sem menu hamburguer ======== */
+@media (max-width: 768px) {
+
+  /* Remove o botão hamburguer */
+  .menu-toggle {
+    display: none !important;
+  }
+
+  /* Centraliza e reorganiza o conteúdo da header */
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  /* Ajusta o logo */
+  .logo-container {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .logo-img {
+    height: 45px;
+  }
+
+  /* Ajusta os links da navbar */
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+
+  /* Remove o botão dourado da header no mobile */
+  header .btn-dourado {
+    display: none;
+  }
+}
+
+/* Hero Section */
 .hero {
   position: relative;
   height: 75vh;
@@ -173,7 +220,7 @@ nav a:hover {
   transform: translateY(0);
 }
 
-/* ===== Ajustes para Mobile (versão final corrigida) ===== */
+/* ===== Ajustes para Mobile ===== */
 @media (max-width: 768px) {
   /* Corrige estrutura geral */
   .hero {
@@ -212,8 +259,7 @@ nav a:hover {
   }
 
   .hero .btn-dourado {
-    font-size: 0.9rem;
-    padding: 0.8rem 1.8rem;
+    display: none;
   }
 
   .hero-img {
@@ -221,10 +267,11 @@ nav a:hover {
     max-width: 400px;
     height: auto;
     display: block;
-    position: static; /* remove o deslocamento lateral */
+    position: static;
     right: auto;
-    margin-bottom: -28.5px;
+    margin-bottom: -10%;
   }
+
 }
 
 /* Sessão Início */
@@ -273,7 +320,7 @@ nav a:hover {
   }
 
   .inicio .hero button {
-    margin-bottom: 2rem; /* espaço extra entre botão e imagem */
+    margin-bottom: 2rem;
   }
 
   .inicio img {
@@ -291,30 +338,159 @@ nav a:hover {
 }
 
 
-.sobre h2, .servicos h2, .depoimentos h2, .contato h2 {
+/* ======== Seção Sobre ======== */
+.sobre {
+  background-color: #f5f5f5;
+  padding: 100px 8%;
   text-align: center;
-  margin-bottom: 40px;
-  font-family: 'Lora', serif;
 }
 
-.sobre-cards {
+.sobre h2 {
+  font-family: 'Lora', serif;
+  font-size: 2rem;
+  color: #1B2A49;
+  margin-bottom: 40px;
+}
+
+.sobre-unico {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
   flex-wrap: wrap;
-  gap: 40px;
+}
+
+.sobre-foto {
+  width: 400px;
+  max-width: 90%;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  object-fit: cover;
+}
+
+.sobre-texto {
+  max-width: 600px;
+  text-align: left;
+}
+
+.sobre-texto p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.8;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .sobre-unico {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre-texto {
+    text-align: center;
+  }
+
+  .sobre-foto {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+/* ======== Carrossel com Transição ======== */
+.carrossel {
+  position: relative;
+  overflow: hidden;
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.slides {
+  position: relative;
+  width: 100%;
+  height: 800px;
+}
+
+.slides img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 1s ease, transform 1.5s ease;
+}
+
+.slides img.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Botões de navegação (versão arredondada e moderna) */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(27, 42, 73, 0.5);
+  color: #fff;
+  border: none;
+  font-size: 1.6rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
-.img-sobre {
-  width: 100%;
-  height: 320px; /* altura ideal para retratos */
-  object-fit: cover; /* preenche o espaço mantendo proporção */
-  object-position: center top; /* centraliza mostrando mais do topo */
-  border-radius: 10px;
-  transition: transform 0.3s ease;
+.prev:hover, .next:hover {
+  background-color: rgba(27, 42, 73, 0.9);
+  transform: translateY(-50%) scale(1.1);
 }
 
-.sobre-card img:hover {
-  transform: scale(1.03);
+.prev { left: 12px; }
+.next { right: 12px; }
+
+/* Indicadores */
+.indicadores {
+  text-align: center;
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 6px;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+.dot.active, .dot:hover {
+  background-color: #b38b4e;
+}
+
+@media (max-width: 768px) {
+  .slides { height: 550px; }
+  .prev,
+  .next {
+    display: none;
+  }
 }
 
 .card, .servico-card {
@@ -348,6 +524,10 @@ nav a:hover {
 /* Depoimentos */
 .depoimentos {
   background: #f5f5f5;
+}
+
+.depoimentos h2 {
+  text-align: center;
 }
 
 .depoimentos-slider blockquote {
@@ -457,6 +637,7 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  padding: 20px;
 }
 
 .contato input, .contato textarea {
@@ -477,7 +658,7 @@ nav a:hover {
   background-color: #fff;
 }
 
-.contato-section h2 {
+.contato h2 {
   font-size: 1.8rem;
   color: #333;
   margin-bottom: 20px;

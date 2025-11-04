@@ -56,24 +56,53 @@
     </div>
   </section>
 
-  <!-- Sobre -->
-  <section id="sobre" class="sobre">
-    <div class="container" data-animate>
-      <h2>Sobre Sabrina & Wesley</h2>
-      <div class="sobre-cards">
-        <div class="card" data-animate>
-          <img class="img-sobre" src="Sabrina.jpeg" alt="Sabrina">
-          <h3>Sabrina</h3>
-          <p>Psicanalista com anos de experiência em terapia de casais, focada no acolhimento e desenvolvimento emocional.</p>
-        </div>
-        <div class="card" data-animate>
-          <img class="img-sobre" src="Wesley.jpeg" alt="Wesley">
-          <h3>Wesley</h3>
-          <p>Psicanalista especialista em relações afetivas, promovendo compreensão e reconexão nos relacionamentos.</p>
-        </div>
+<!-- Sobre -->
+<section id="sobre" class="sobre">
+  <div class="container" data-animate>
+    <h2>Sobre Sabrina & Wesley</h2>
+
+    <div class="sobre-unico">
+      <img src="Sobre.jpeg" alt="Sabrina e Wesley" class="sobre-foto">
+      <div class="sobre-texto">
+        <p>
+          Sabrina e Wesley são psicanalistas especializados em terapia de casais, dedicados a
+          fortalecer vínculos, restaurar conexões e promover relacionamentos saudáveis e conscientes.
+          Com uma abordagem acolhedora e humanizada, o casal combina experiência, empatia e técnica
+          para guiar outras pessoas em suas jornadas emocionais e afetivas.
+        </p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- Galeria / Carrossel -->
+<section id="galeria" class="galeria">
+  <div class="container" data-animate>
+    <h2>Momentos Especiais</h2>
+
+    <div class="carrossel">
+      <div class="slides">
+        <img src="Galeria1.jpeg" alt="Evento 1" class="active">
+        <img src="Galeria2.jpeg" alt="Evento 2">
+        <img src="Galeria3.jpeg" alt="Evento 3">
+        <img src="Galeria4.jpeg" alt="Evento 4">
+      </div>
+
+      <!-- Botões -->
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+
+      <!-- Indicadores -->
+      <div class="indicadores">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
 
   <section class="servicos-section">
   <h2>Serviços</h2>
@@ -204,6 +233,49 @@
   }, 5000);
 </script>
 
+<script>
+  // === Carrossel da Galeria ===
+  const slides = document.querySelectorAll(".slides img");
+  const dots = document.querySelectorAll(".dot");
+  const prev = document.querySelector(".prev");
+  const next = document.querySelector(".next");
+  let current = 0;
+  let intervalo;
+
+  function showSlide(index) {
+    slides.forEach((img, i) => {
+      img.classList.toggle("active", i === index);
+      dots[i].classList.toggle("active", i === index);
+    });
+  }
+
+  function nextSlide() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }
+
+  function prevSlide() {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  }
+
+  // Controles
+  next.addEventListener("click", () => { nextSlide(); resetTimer(); });
+  prev.addEventListener("click", () => { prevSlide(); resetTimer(); });
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      current = i;
+      showSlide(i);
+      resetTimer();
+    });
+  });
+
+  // Troca automática
+  function startTimer() { intervalo = setInterval(nextSlide, 5000); }
+  function resetTimer() { clearInterval(intervalo); startTimer(); }
+
+  startTimer();
+</script>
 
 </body>
 </html>
