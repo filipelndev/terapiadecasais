@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weslei & Sabrina - Terapia Familiar</title>
+  <title>Weslei & Sabrina - Psicanalistas</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
@@ -15,13 +15,14 @@
       <img src="logo.png" alt="Logo" class="logo-img">
       <div class="logo-text">
         <h1 class="logo">Weslei & Sabrina</h1>
-        <h1 class="subtitulo">Terapeutas Familiar</h1>
+        <h1 class="subtitulo">Psicanalistas</h1>
       </div>
     </div>
     <nav>
       <ul class="nav-links">
         <li><a href="#inicio">Início</a></li>
         <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#metodo">Método</a></li>
         <li><a href="#servicos">Serviços</a></li>
         <li><a href="#depoimentos">Depoimentos</a></li>
         <li><a href="#contato">Contato</a></li>
@@ -61,16 +62,80 @@
   <div class="container" data-animate>
     <h2>Sobre Weslei & Sabrina</h2>
 
-    <div class="sobre-unico">
-      <img src="Sobre.jpeg" alt="Sabrina e Weslei" class="sobre-foto">
-      <div class="sobre-texto">
-        <p>
-          Weslei e Sabrina são psicanalistas especializados em terapia familiar, dedicados a
-          fortalecer vínculos, restaurar conexões e promover relacionamentos saudáveis e conscientes.
-          Com uma abordagem acolhedora e humanizada, o casal combina experiência, empatia e técnica
-          para guiar outras pessoas em suas jornadas emocionais e afetivas.
-        </p>
-      </div>
+    <div class="sobre-grid">
+      <article class="sobre-card">
+        <button class="sobre-toggle" type="button" aria-label="Abrir informações sobre Sabrina">
+          <div class="sobre-foto-wrap">
+            <img src="foto1.jpeg" alt="Sabrina Nunes" class="sobre-foto">
+            <span class="sobre-label">Sobre</span>
+          </div>
+        </button>
+        <div class="sobre-hover">
+          <div class="sobre-hover-content">
+            <button class="sobre-close" type="button" aria-label="Fechar informações">×</button>
+            <h3>Sabrina Nunes | Psicanalista e Pneuma Psicanalista</h3>
+            <p>Meu propósito é ajudar mulheres a compreenderem suas dores emocionais, identificarem a raiz de seus conflitos e encontrarem novos caminhos para viver com mais equilíbrio, leveza e propósito.</p>
+            <p>Meu trabalho é fundamentado na Psicanálise, que busca compreender a origem dos comportamentos, emoções, medos, inseguranças e padrões que muitas vezes se repetem ao longo da vida. Através de uma escuta acolhedora, ética e sem julgamentos, ofereço um espaço seguro para que cada pessoa possa falar sobre suas experiências, dores e desafios.</p>
+            <p>Também atuo com a PneumaPsicanálise, uma abordagem que integra os princípios da Psicanálise com a intervenção do Espírito Santo, respeitando a fé e a individualidade de cada pessoa. Nesse processo, trabalhamos não apenas as questões emocionais, mas também a restauração da identidade, dos relacionamentos e da vida espiritual.</p>
+            <p>Se você sente que está presa em ciclos que se repetem, sobrecarregada emocionalmente ou enfrentando dificuldades que parecem não ter solução, saiba que existe um caminho de transformação. Você não precisa enfrentar tudo sozinha.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="sobre-card">
+        <button class="sobre-toggle" type="button" aria-label="Abrir informações sobre Weslei">
+          <div class="sobre-foto-wrap">
+            <img src="Sobre.jpeg" alt="Weslei Vicente" class="sobre-foto">
+            <span class="sobre-label">Sobre</span>
+          </div>
+        </button>
+        <div class="sobre-hover">
+          <div class="sobre-hover-content">
+            <button class="sobre-close" type="button" aria-label="Fechar informações">×</button>
+            <h3>Psicanalista Weslei Vicente</h3>
+            <p>Nem toda dor aparece no corpo. Muitas vezes ela se manifesta na ansiedade, na irritação, nos conflitos familiares, nos relacionamentos, na culpa, no medo ou na sensação de estar sempre carregando um peso que não consegue explicar.</p>
+            <p>Meu trabalho psicanalítico busca ir além dos sintomas. O objetivo é compreender e tratar a raiz do problema, identificando experiências, crenças e feridas emocionais que influenciam seus pensamentos, sentimentos e comportamentos.</p>
+            <p>Através de uma escuta acolhedora, ética e sem julgamentos, ofereço um ambiente seguro para que cada homem possa falar sobre sua história, compreender suas emoções e ressignificar dores que, por muito tempo, permaneceram silenciosas.</p>
+            <p>Se você enfrenta ansiedade, traumas, baixa autoestima, conflitos familiares, dificuldades nos relacionamentos, dependência emocional, compulsões, estresse ou sente que perdeu o sentido da vida, saiba que existe um caminho de transformação.</p>
+            <p>A verdadeira mudança acontece quando tratamos a causa, e não apenas os sintomas.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="sobre-card">
+        <button class="sobre-toggle" type="button" aria-label="Abrir informações sobre o casal">
+          <div class="sobre-foto-wrap">
+            <img src="hero1.png" alt="Weslei e Sabrina" class="sobre-foto">
+            <span class="sobre-label">Sobre</span>
+          </div>
+        </button>
+        <div class="sobre-hover">
+          <div class="sobre-hover-content">
+            <button class="sobre-close" type="button" aria-label="Fechar informações">×</button>
+            <h3>Weslei Vicente & Sabrina Nunes</h3>
+            <p>Somos Weslei Vicente e Sabrina Nunes, casados há 16 anos, pais de três filhos: os gêmeos Camila e Arthur e o caçula Daniel.</p>
+            <p>Além de psicanalistas e terapeutas, somos uma família que conhece de perto os desafios da vida a dois, da criação dos filhos e das lutas que muitas famílias enfrentam diariamente.</p>
+            <p>Nossa história não é marcada pela perfeição, mas pela transformação. Assim como muitos casais, já enfrentamos períodos de conflitos, dificuldades na comunicação, desencontros emocionais e momentos em que o nosso casamento esteve extremamente fragilizado.</p>
+            <p>Foi através do autoconhecimento, do desenvolvimento emocional, da fé e do entendimento das raízes dos nossos comportamentos que começamos a construir uma nova história.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="metodo" id="metodo">
+      <h3>Método RAIZ</h3>
+      <p>Com a experiência adquirida ao longo dos atendimentos, desenvolvemos uma metodologia própria baseada na Psicanálise, na Neurociência e na PneumaPsicanálise.</p>
+      <p>Chamamos essa metodologia de Método RAIZ, porque acreditamos que muitos conflitos conjugais não começam no casamento, mas nas experiências, feridas emocionais e padrões que cada pessoa carregou para dentro dele.</p>
+      <p>Através desse método, ajudamos nossos pacientes a compreenderem sua história, identificarem padrões inconscientes, ressignificarem experiências dolorosas e desenvolverem novos caminhos emocionais, relacionais e espirituais.</p>
+      <p>Acreditamos que a transformação acontece quando a pessoa deixa de lutar apenas contra os sintomas e passa a compreender a raiz do problema. Porque aquilo que não é tratado tende a ser repetido.</p>
+      <p>Mas quando uma pessoa decide curar sua história, ela não transforma apenas a própria vida: transforma seu casamento, fortalece sua família e interrompe ciclos que poderiam alcançar as próximas gerações.</p>
+      <p>Se você decidir quebrar os padrões, seus filhos não precisarão repeti-los.</p>
+      <ul class="raiz-list">
+        <li><strong>R</strong> – Reconhecer a História</li>
+        <li><strong>A</strong> – Acessar as Feridas Emocionais</li>
+        <li><strong>I</strong> – Identificar os Padrões Inconscientes</li>
+        <li><strong>Z</strong> – Zerar os Ciclos e Construir Novos Caminhos</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -104,7 +169,7 @@
 </section>
 
 
-  <section class="servicos-section">
+  <section id="servicos" class="servicos-section">
   <h2>Serviços</h2>
   <div class="servicos-container">
 
@@ -230,6 +295,39 @@
     index = (index + 1) % quotes.length;
     quotes[index].classList.add('active');
   }, 5000);
+
+  // Popup de informações da seção Sobre
+  const sobreCards = document.querySelectorAll('.sobre-card');
+
+  sobreCards.forEach(card => {
+    const toggle = card.querySelector('.sobre-toggle');
+    const close = card.querySelector('.sobre-close');
+
+    const openPopup = () => {
+      sobreCards.forEach(item => item.classList.remove('is-active'));
+      card.classList.add('is-active');
+    };
+
+    const closePopup = () => {
+      card.classList.remove('is-active');
+    };
+
+    toggle.addEventListener('click', (event) => {
+      event.preventDefault();
+      card.classList.contains('is-active') ? closePopup() : openPopup();
+    });
+
+    close.addEventListener('click', (event) => {
+      event.preventDefault();
+      closePopup();
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      sobreCards.forEach(card => card.classList.remove('is-active'));
+    }
+  });
 </script>
 
 <script>
